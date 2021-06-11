@@ -1,0 +1,12 @@
+import(package='flutter_view_widgets/flutter_view_widgets.dart')
+
+loader(flutter-view)
+    scaffold
+        app-bar(as='appBar' center-title=true).bar
+            .siteName(as='title') Alligator.io
+        .bg(as='body')
+            column: array(as='children')
+                .logo
+                .slogan Front-End Web Development, Chewed Up
+                .subSlogan Angular 2+, Vue.js, React, Svelte JavaScript, CSS, Node.js...
+                .btnText: button(:^on-pressed="() => print('Hello World')") See all posts
