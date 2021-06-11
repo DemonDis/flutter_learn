@@ -23,7 +23,11 @@ class _MyHomePageState extends State<MyHomePage> {
               'Что-нибудь выведем?',
             ),
             Text(
-              'Цифра',
+              'Текст',
+              style: Theme.of(context).textTheme.headline4,
+            ),
+            Text(
+              'Еще текст',
               style: Theme.of(context).textTheme.headline4,
             ),
           ],
