@@ -9,16 +9,27 @@ class SwipePanel extends StatelessWidget {
       topRight: Radius.circular(20.0),
     );
     return Scaffold(
-        body: Stack(
-      children: <Widget>[
-        SlidingUpPanel(
-          backdropEnabled: true,
-          borderRadius: radius,
-          panel: Center(
-            child: Text("This is the sliding Widget"),
-          ),
-        )
-      ],
-    ));
+      body: SlidingUpPanel(
+        backdropEnabled: true,
+        borderRadius: radius,
+        panelBuilder: (ScrollController sc) => _scrollingList(sc),
+        body: Center(
+          child: Text("This is the Widget behind the sliding panel"),
+        ),
+      ),
+    );
+  }
+
+  Widget _scrollingList(ScrollController sc) {
+    return ListView.builder(
+      controller: sc,
+      itemCount: 50,
+      itemBuilder: (BuildContext context, int i) {
+        return Container(
+          padding: const EdgeInsets.all(12.0),
+          child: Text("$i"),
+        );
+      },
+    );
   }
 }
