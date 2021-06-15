@@ -32,6 +32,8 @@ dependencies:
   sass: ^1.34.1
   flutter_view_widgets: ^1.0.6
   english_words: ^4.0.0
+  glassmorphism: ^2.0.1
+  sliding_up_panel: ^2.0.0+1
 
 dev_dependencies:
   flutter_test:
