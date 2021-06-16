@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
         title: 'Startup Name Generator',
         theme: ThemeData(
           primaryColor: Colors.grey,
+          fontFamily: "OrchideaProL",
         ),
         home: MyHomePage(
           title: 'Flutter',

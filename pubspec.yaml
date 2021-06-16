@@ -14,7 +14,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # Read more about Android versioning at https://developer.android.com/studio/publish/versioning
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
-# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+# https://developer.apple.com/ary/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 version: 1.0.0+1
 
 environment:
@@ -33,7 +33,7 @@ dependencies:
   flutter_view_widgets: ^1.0.6
   english_words: ^4.0.0
   glassmorphism: ^2.0.1
-  sliding_up_panel: ^2.0.0+1
+  modal_bottom_sheet: ^2.0.0
 
 dev_dependencies:
   flutter_test:
@@ -78,5 +78,83 @@ flutter:
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #
+  fonts:
+    - family: OrchideaProBl
+      fonts:
+        - asset: assets/fonts/OrchideaPro/OrchideaPro-Black.ttf
+          style: normal
+          weight: 900
+    - family: OrchideaProBlI
+      fonts:
+        - asset: assets/fonts/OrchideaPro/OrchideaPro-BlackItalic.ttf
+          style: normal
+          weight: 900
+    - family: OrchideaProBlI
+      fonts:
+        - asset: assets/fonts/OrchideaPro/OrchideaPro-Bold.ttf
+          style: normal
+    - family: OrchideaProBI
+      fonts:
+        - asset: assets/fonts/OrchideaPro/OrchideaPro-BoldItalic.ttf
+          style: italic
+    - family: OrchideaProEB
+      fonts:
+        - asset: assets/fonts/OrchideaPro/OrchideaPro-ExtraBold.ttf
+          style: normal
+          weight: 800
+    - family: OrchideaProExBI
+      fonts:
+        - asset: assets/fonts/OrchideaPro/OrchideaPro-ExtraBoldItalic.ttf
+          style: italic
+          weight: 800
+    - family: OrchideaProEL
+      fonts:
+        - asset: assets/fonts/OrchideaPro/OrchideaPro-ExtraLight.ttf
+          style: normal
+          weight: 200
+    - family: OrchideaProELI
+      fonts:
+        - asset: assets/fonts/OrchideaPro/OrchideaPro-ExtraLightItalic.ttf
+          style: italic
+          weight: 200
+    - family: OrchideaProI
+      fonts:
+        - asset: assets/fonts/OrchideaPro/OrchideaPro-Italic.ttf
+          style: italic
+    - family: OrchideaProL
+      fonts:
+        - asset: assets/fonts/OrchideaPro/OrchideaPro-Light.ttf
+          style: italic
+          weight: 300
+    - family: OrchideaProLI
+      fonts:
+        - asset: assets/fonts/OrchideaPro/OrchideaPro-LightItalic.ttf
+          style: italic
+          weight: 200
+    - family: OrchideaProM
+      fonts:
+        - asset: assets/fonts/OrchideaPro/OrchideaPro-Medium.ttf
+          style: normal
+          weight: 500
+    - family: OrchideaProMI
+      fonts:
+        - asset: assets/fonts/OrchideaPro/OrchideaPro-MediumItalic.ttf
+          style: italic
+          weight: 500
+    - family: OrchideaProR
+      fonts:
+        - asset: assets/fonts/OrchideaPro/OrchideaPro-Regular.ttf
+          style: normal
+    - family: OrchideaProS
+      fonts:
+        - asset: assets/fonts/OrchideaPro/OrchideaPro-SemiBold.ttf
+          style: normal
+          weight: 600
+    - family: OrchideaProSBI
+      fonts:
+        - asset: assets/fonts/OrchideaPro/OrchideaPro-SemiBoldItalic.ttf
+          style: italic
+          weight: 600
+
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
