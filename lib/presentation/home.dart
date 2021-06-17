@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import './drawer.dart';
-import './swipe_modal.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
+import '../widget/widget.dart';
 
 class MyHomePage extends StatelessWidget {
   final String title;
@@ -12,19 +11,31 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(title)),
+      appBar: AppBar(
+        title: Text(title),
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.add_alert),
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('This is a snackbar')));
+            },
+          ),
+        ],
+      ),
       drawer: SideDrawer(),
       body: CupertinoPageScaffold(
         backgroundColor: Colors.white,
         child: SizedBox.expand(
           child: SingleChildScrollView(
-            primary: true,
+            primary: false,
             child: SafeArea(
-              bottom: false,
+              bottom: true,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
+                  MyStatefulWidget(),
                   ListTile(
                       title: Text('Reverse list'),
                       onTap: () => showBarModalBottomSheet(
@@ -35,7 +46,7 @@ class MyHomePage extends StatelessWidget {
                                 ModalInsideModal(reverse: true),
                           )),
                   SizedBox(
-                    height: 60,
+                    height: 20,
                   )
                 ],
               ),
