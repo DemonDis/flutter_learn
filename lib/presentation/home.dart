@@ -35,7 +35,7 @@ class MyHomePage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  MyStatefulWidget(),
+                  ChangeThemeButtonWidget(),
                   ListTile(
                       title: Text('Reverse list'),
                       onTap: () => showBarModalBottomSheet(

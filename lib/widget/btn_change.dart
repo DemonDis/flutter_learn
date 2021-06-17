@@ -1,23 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../resources/theme.dart';
 
-class MyStatefulWidget extends StatefulWidget {
-  const MyStatefulWidget({Key? key}) : super(key: key);
-
-  @override
-  State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
-}
-
-class _MyStatefulWidgetState extends State<MyStatefulWidget> {
-  bool _theme = false;
-
+class ChangeThemeButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return SwitchListTile(
-      value: _theme,
-      onChanged: (bool value) {
-        setState(() {
-          _theme = value;
-        });
+    final themeProvider = Provider.of<ThemeProvider>(context);
+
+    return Switch.adaptive(
+      value: themeProvider.isDarkMode,
+      onChanged: (value) {
+        final provider = Provider.of<ThemeProvider>(context, listen: false);
+        provider.toggleTheme(value);
       },
     );
   }
