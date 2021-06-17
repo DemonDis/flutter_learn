@@ -21,6 +21,7 @@ class MyHomePage extends StatelessWidget {
                   const SnackBar(content: Text('This is a snackbar')));
             },
           ),
+          ChangeThemeButtonWidget(),
         ],
       ),
       drawer: SideDrawer(),
@@ -35,7 +36,6 @@ class MyHomePage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  ChangeThemeButtonWidget(),
                   ListTile(
                       title: Text('Reverse list'),
                       onTap: () => showBarModalBottomSheet(
