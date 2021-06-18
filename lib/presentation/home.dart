@@ -14,40 +14,24 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text(title),
         actions: <Widget>[
-          IconButton(
-            icon: const Icon(Icons.add_alert),
-            onPressed: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('This is a snackbar')));
-            },
-          ),
           ChangeThemeButtonWidget(),
         ],
       ),
       drawer: SideDrawer(),
+      // body: UpPanel(),
       body: CupertinoPageScaffold(
         backgroundColor: Colors.white,
         child: SizedBox.expand(
           child: SingleChildScrollView(
-            primary: false,
-            child: SafeArea(
-              bottom: true,
+            child: Container(
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
                   ListTile(
-                      title: Text('Reverse list'),
+                      title: Text('Start'),
                       onTap: () => showBarModalBottomSheet(
-                            expand: true,
                             context: context,
-                            backgroundColor: Colors.transparent,
-                            builder: (context) =>
-                                ModalInsideModal(reverse: true),
+                            builder: (context) => ModalInsideModal(),
                           )),
-                  SizedBox(
-                    height: 20,
-                  )
                 ],
               ),
             ),
