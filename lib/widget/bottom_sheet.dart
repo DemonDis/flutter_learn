@@ -9,27 +9,33 @@ class BottomSheetModal extends StatelessWidget {
         child: DraggableScrollableSheet(
           initialChildSize: 0.1,
           minChildSize: 0.1,
-          maxChildSize: 0.7,
+          maxChildSize: 1,
           builder: (BuildContext context, ScrollController scrollController) {
-            return Container(
-              decoration: BoxDecoration(boxShadow: [
-                BoxShadow(
-                  blurRadius: 24,
-                  spreadRadius: 16,
-                  color: Colors.red.withOpacity(0.2),
-                )
-              ]),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(16.0),
-                child: BackdropFilter(
-                  filter: ImageFilter.blur(
-                    sigmaX: 40.0,
-                    sigmaY: 40.0,
+            return Stack(children: <Widget>[
+              Container(
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(16),
+                        topRight: Radius.circular(16)),
+                    boxShadow: [
+                      BoxShadow(
+                        blurRadius: 5,
+                        spreadRadius: 1,
+                        color: Colors.blue.withOpacity(0.8),
+                      )
+                    ]),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(16.0),
+                  child: BackdropFilter(
+                    filter: ImageFilter.blur(
+                      sigmaX: 40.0,
+                      sigmaY: 40.0,
+                    ),
+                    child: ListaItems(scrollController),
                   ),
-                  child: ListaItems(scrollController),
                 ),
               ),
-            );
+            ]);
           },
         ),
       ),
@@ -57,13 +63,13 @@ class ListaItems extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
-      padding: const EdgeInsets.all(11),
+      padding: const EdgeInsets.all(10),
       controller: this.scrollController,
       itemCount: entries.length,
       itemBuilder: (BuildContext context, int index) => Container(
         height: 50,
-        color: Colors.blue[colorCodes[index]],
-        child: Center(child: Text('Entry ${entries[index]}')),
+        color: Colors.amber[colorCodes[index]],
+        child: Center(child: Text('${entries[index]}')),
       ),
       separatorBuilder: (BuildContext context, int index) => const Divider(),
     );

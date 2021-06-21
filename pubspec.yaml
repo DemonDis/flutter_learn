@@ -32,11 +32,10 @@ dependencies:
   flutter_view_widgets: ^1.0.6
   english_words: ^4.0.0
   glassmorphism: ^2.0.1
-  modal_bottom_sheet: ^2.0.0
   dotted_border: ^2.0.0
   flutter_screenutil: ^5.0.0+2
   provider: ^5.0.0
-  sliding_up_panel: ^2.0.0+1
+  flutter_svg: ^0.22.0
 
 dev_dependencies:
   flutter_test:
@@ -148,7 +147,7 @@ flutter:
           weight: 600
 
   assets:
-    - assets/img/
+    - assets/img/flutter_logo.svg
 
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
