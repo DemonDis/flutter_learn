@@ -25,7 +25,9 @@ class BottomSheetModal extends StatelessWidget {
                       )
                     ]),
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(16.0),
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(16),
+                      topRight: Radius.circular(16)),
                   child: BackdropFilter(
                     filter: ImageFilter.blur(
                       sigmaX: 40.0,
