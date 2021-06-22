@@ -1,55 +1,104 @@
 import 'package:flutter/material.dart';
 import 'dart:ui';
+import 'package:glassmorphism/glassmorphism.dart';
 
 class BottomSheetModal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SizedBox.expand(
-        child: DraggableScrollableSheet(
-          initialChildSize: 0.1,
-          minChildSize: 0.1,
-          maxChildSize: 1,
-          builder: (BuildContext context, ScrollController scrollController) {
-            return Stack(children: <Widget>[
-              Container(
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: NetworkImage(
-                        "https://upload.wikimedia.org/wikipedia/commons/6/63/Fotothek_df_roe-neg_0002766_001_Portrait_eines_Pioniers_beim_Fotografieren.jpg"),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-              Container(
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(16),
-                        topRight: Radius.circular(16)),
-                    boxShadow: [
-                      BoxShadow(
-                        blurRadius: 5,
-                        spreadRadius: 1,
-                        color: Colors.blue.withOpacity(0.8),
-                      ),
-                    ]),
-                child: ClipRRect(
+    return DraggableScrollableSheet(
+      initialChildSize: 0.1,
+      minChildSize: 0.1,
+      maxChildSize: 0.8,
+      builder: (context, scrollController) {
+        return Stack(
+          children: [
+            Container(
+              decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(16),
                       topRight: Radius.circular(16)),
-                  child: BackdropFilter(
-                    filter: ImageFilter.blur(
-                      sigmaX: 4.0,
-                      sigmaY: 4.0,
+                  boxShadow: [
+                    BoxShadow(
+                      blurRadius: 10,
+                      spreadRadius: 1,
+                      color: Colors.blue.withOpacity(0.8),
                     ),
-                    child: ListaItems(scrollController),
+                  ]),
+              child: ClipRRect(
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(16),
+                    topRight: Radius.circular(16)),
+                child: BackdropFilter(
+                  filter: ImageFilter.blur(
+                    sigmaX: 7.0,
+                    sigmaY: 7.0,
                   ),
+                  child: ListaItems(scrollController),
                 ),
               ),
-            ]);
-          },
-        ),
-      ),
+            ),
+            ListaItems(scrollController),
+            ListaItems(scrollController),
+          ],
+        );
+      },
+    );
+  }
+}
+
+class BottomSheetModal2 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return DraggableScrollableSheet(
+      initialChildSize: 0.1,
+      minChildSize: 0.1,
+      maxChildSize: 0.8,
+      builder: (context, scrollController) {
+        return Stack(
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(16),
+                    topRight: Radius.circular(16)),
+              ),
+            ),
+            GlassmorphicContainer(
+              width: MediaQuery.of(context).size.width * 1,
+              height: MediaQuery.of(context).size.height * 1,
+              borderRadius: 1,
+              blur: 10,
+              alignment: Alignment.bottomCenter,
+              border: 1,
+              linearGradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    Color(0xFFF75035).withAlpha(55),
+                    Color(0xFFffffff).withAlpha(45),
+                  ],
+                  stops: [
+                    0.3,
+                    1,
+                  ]),
+              borderGradient: LinearGradient(
+                  begin: Alignment.bottomRight,
+                  end: Alignment.topLeft,
+                  colors: [
+                    Color(0xFF4579C5).withAlpha(100),
+                    Color(0xFFFFFFF).withAlpha(55),
+                    Color(0xFFF75035).withAlpha(10),
+                  ],
+                  stops: [
+                    0.06,
+                    0.95,
+                    1
+                  ]),
+            ),
+            ListaItems(scrollController),
+          ],
+        );
+      },
     );
   }
 }
@@ -58,12 +107,12 @@ final List<String> entries = <String>[
   'House',
   'Fish',
   'Chicken',
-  // 'Cow',
-  // 'Bird',
-  // 'Bear',
-  // 'Bee',
-  // 'Swift',
-  // 'Pig'
+  'Cow',
+  'Bird',
+  'Bear',
+  'Bee',
+  'Swift',
+  'Pig'
 ];
 final List<int> colorCodes = <int>[900, 800, 700, 600, 500, 400, 300, 200, 100];
 

@@ -10,14 +10,35 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-        actions: <Widget>[
-          ChangeThemeButtonWidget(),
-        ],
-      ),
-      drawer: SideDrawer(),
-      body: BottomSheetModal(),
-    );
+        appBar: AppBar(
+          title: Text(title),
+          actions: <Widget>[
+            ChangeThemeButtonWidget(),
+          ],
+        ),
+        drawer: SideDrawer(),
+        body: Stack(
+          children: [
+            Center(
+              child: Positioned(
+                bottom: MediaQuery.of(context).size.height * 0.3 - 70,
+                left: 40,
+                child: Container(
+                  width: 100,
+                  height: 100.0,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    gradient: LinearGradient(colors: [
+                      Color(0xFFBC1642),
+                      Color(0xFFCB5AC6),
+                    ]),
+                  ),
+                ),
+              ),
+            ),
+            // BottomSheetModal()
+            BottomSheetModal2()
+          ],
+        ));
   }
 }
