@@ -14,50 +14,6 @@ class BottomSheetModal extends StatelessWidget {
           children: [
             Container(
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(16),
-                      topRight: Radius.circular(16)),
-                  boxShadow: [
-                    BoxShadow(
-                      blurRadius: 10,
-                      spreadRadius: 1,
-                      color: Colors.blue.withOpacity(0.8),
-                    ),
-                  ]),
-              child: ClipRRect(
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(16),
-                    topRight: Radius.circular(16)),
-                child: BackdropFilter(
-                  filter: ImageFilter.blur(
-                    sigmaX: 7.0,
-                    sigmaY: 7.0,
-                  ),
-                  child: ListaItems(scrollController),
-                ),
-              ),
-            ),
-            ListaItems(scrollController),
-            ListaItems(scrollController),
-          ],
-        );
-      },
-    );
-  }
-}
-
-class BottomSheetModal2 extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return DraggableScrollableSheet(
-      initialChildSize: 0.1,
-      minChildSize: 0.1,
-      maxChildSize: 0.8,
-      builder: (context, scrollController) {
-        return Stack(
-          children: [
-            Container(
-              decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(16),
                     topRight: Radius.circular(16)),
