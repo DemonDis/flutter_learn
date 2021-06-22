@@ -19,25 +19,22 @@ class MyHomePage extends StatelessWidget {
         drawer: SideDrawer(),
         body: Stack(
           children: [
-            Center(
-              child: Positioned(
-                bottom: MediaQuery.of(context).size.height * 0.3 - 70,
-                left: 40,
-                child: Container(
-                  width: 100,
-                  height: 100.0,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    gradient: LinearGradient(colors: [
-                      Color(0xFFBC1642),
-                      Color(0xFFCB5AC6),
-                    ]),
-                  ),
+            Positioned(
+              bottom: 450,
+              left: 40,
+              child: Container(
+                width: 100,
+                height: 100.0,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  gradient: LinearGradient(colors: [
+                    Color(0xFFBC1642),
+                    Color(0xFFCB5AC6),
+                  ]),
                 ),
               ),
             ),
-            // BottomSheetModal()
-            BottomSheetModal2()
+            BottomSheetModal(),
           ],
         ));
   }
